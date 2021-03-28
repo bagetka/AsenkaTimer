@@ -1,0 +1,8 @@
+@import '~@angular/material/theming';
+
+$custom-typography: mat-typography-config(
+  $font-family: '"Gilroy", sans-serif'
+);
+
+// Override the typography in the core CSS.
+@include mat-core($custom-typography);

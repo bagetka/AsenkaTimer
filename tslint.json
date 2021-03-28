@@ -12,6 +12,7 @@
     },
     "array-type": false,
     "arrow-return-shorthand": true,
+    "ban-ts-ignore": true,
     "curly": true,
     "deprecation": {
       "severity": "warning"
@@ -32,6 +33,7 @@
       true,
       140
     ],
+    "member-access": true,
     "member-ordering": [
       true,
       {
@@ -51,12 +53,17 @@
       "timeEnd",
       "trace"
     ],
+    "no-debugger": true,
     "no-empty": false,
+    "no-empty-interface": true,
+    "no-eval": true,
     "no-inferrable-types": [
       true,
       "ignore-params"
     ],
+    "no-magic-numbers": true,
     "no-non-null-assertion": true,
+    "no-parameter-reassignment": true,
     "no-redundant-jsdoc": true,
     "no-switch-case-fall-through": true,
     "no-var-requires": false,
@@ -83,8 +90,7 @@
       }
     },
     "typedef": [
-      true,
-      "call-signature"
+      true
     ],
     "typedef-whitespace": {
       "options": [
