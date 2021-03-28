@@ -1,0 +1,17 @@
+{
+  "name": "AsenkaTimer",
+  "short_name": "AsenkaTimer",
+  "theme_color": "#1976d2",
+  "background_color": "#fafafa",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "assets/icons/icon.png",
+      "sizes": "100x100",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}
