@@ -9,19 +9,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeScreenComponent } from './home-screen/home-screen.component';
 import { CountdownComponent } from './home-screen/countdown/countdown.component';
 import { FlexModule } from '@angular/flex-layout';
+import { ProgressLineComponent } from './home-screen/progress-line/progress-line.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeScreenComponent,
-    CountdownComponent
+    CountdownComponent,
+    ProgressLineComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
-    FlexModule
+    FlexModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

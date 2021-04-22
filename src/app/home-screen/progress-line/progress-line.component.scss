@@ -1,0 +1,11 @@
+.line-container {
+  width: 70vw;
+
+  .mat-progress-bar-fill::after {
+    background-color: #E50914;
+  }
+
+  .mat-progress-bar-buffer {
+    background-color: white;
+  }
+}

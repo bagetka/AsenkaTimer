@@ -42,7 +42,7 @@ export class CountdownComponent implements OnInit, OnDestroy {
   }
 
   private recountTimeValues(): void {
-    let delta: number = Math.abs(Date.now() - ASENKA_BACK_DATETIME.getTime());
+    let delta: number = ASENKA_BACK_DATETIME.getTime() - Date.now();
 
     // Full days left
     const days = Math.floor(delta / this.millisecondNumber.days);
