@@ -16,4 +16,8 @@ export class ProgressLineComponent {
     const maxBarValue = 100;
     this.progressValue = (this.timeLeft / this.fullTime) * maxBarValue;
   }
+
+  public roundValue(value: number, roundRate: number = 10): number {
+    return Math.round(value * roundRate) / roundRate;
+  }
 }
