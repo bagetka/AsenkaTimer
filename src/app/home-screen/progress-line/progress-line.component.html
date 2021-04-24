@@ -1,4 +1,4 @@
 <div class="line-container">
   <mat-progress-bar [value]="progressValue"></mat-progress-bar>
-  <p class="percentage-label">{{roundValue(progressValue, 100)}}%</p>
+  <p class="percentage-label">{{progressValue | number: '1.7-7'}}%</p>
 </div>

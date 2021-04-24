@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { ASENKA_BACK_DATETIME, ASENKA_START_DATETIME } from '../../../constants';
 
 @Component({
@@ -7,17 +7,26 @@ import { ASENKA_BACK_DATETIME, ASENKA_START_DATETIME } from '../../../constants'
   styleUrls: ['./progress-line.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ProgressLineComponent {
-  private fullTime: number = ASENKA_BACK_DATETIME.getTime() - ASENKA_START_DATETIME.getTime();
-  private timeLeft: number = Date.now() - ASENKA_START_DATETIME.getTime();
-  public progressValue: number;
+export class ProgressLineComponent implements OnInit, OnDestroy {
 
-  constructor() {
-    const maxBarValue = 100;
-    this.progressValue = (this.timeLeft / this.fullTime) * maxBarValue;
+  public progressValue!: number;
+
+  private readonly fullTime: number = ASENKA_BACK_DATETIME.getTime() - ASENKA_START_DATETIME.getTime();
+  private readonly maxBarValue = 100;
+  private countdownProcess: any;
+
+  private timeLeft = (): number => Date.now() - ASENKA_START_DATETIME.getTime();
+
+  public ngOnInit() {
+    const labelUpdateInterval = 30;
+    this.countdownProcess = setInterval(this.updateProgressValue.bind(this), labelUpdateInterval);
   }
 
-  public roundValue(value: number, roundRate: number = 10): number {
-    return Math.round(value * roundRate) / roundRate;
+  public ngOnDestroy(): void {
+    clearInterval(this.countdownProcess);
+  }
+
+  private updateProgressValue(): void {
+    this.progressValue = (this.timeLeft() / this.fullTime) * this.maxBarValue;
   }
 }
