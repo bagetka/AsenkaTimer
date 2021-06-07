@@ -9,6 +9,10 @@
   font-weight: 900;
 }
 
+.alex-img {
+  border-radius: 50%;
+}
+
 @media (min-width: 1050px) {
   .container {
     background: linear-gradient(
@@ -21,6 +25,10 @@
 
   .title {
     font-size: 96px;
+  }
+
+  .image {
+    height: 100px;
   }
 }
 
@@ -36,6 +44,10 @@
   .title {
     font-size: 50px;
   }
+
+  .image {
+    height: 75px;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 479px) {
@@ -49,5 +61,9 @@
 
   .title {
     font-size: 38px;
+  }
+
+  .image {
+    height: 40px;
   }
 }
