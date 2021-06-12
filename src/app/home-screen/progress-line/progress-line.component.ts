@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewEncapsulation, Input } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { DateRange } from '../../../interfaces/date-range';
 
 @Component({
@@ -7,7 +7,7 @@ import { DateRange } from '../../../interfaces/date-range';
   styleUrls: ['./progress-line.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class ProgressLineComponent implements OnInit, OnDestroy {
+export class ProgressLineComponent implements OnInit, OnChanges, OnDestroy {
 
   @Input() dateRange!: DateRange;
   @Input() labelUpdateInterval = 30;
@@ -19,9 +19,14 @@ export class ProgressLineComponent implements OnInit, OnDestroy {
   private fullTime!: number;
   private countdownProcess: any;
 
-  public ngOnInit() {
+  public ngOnInit(): void {
     this.fullTime = this.dateRange.endDate.getTime() - this.dateRange.startDate.getTime();
     this.countdownProcess = setInterval(this.updateProgressValue.bind(this), this.labelUpdateInterval);
+  }
+
+  public ngOnChanges(): void {
+    this.ngOnDestroy();
+    this.ngOnInit();
   }
 
   public ngOnDestroy(): void {

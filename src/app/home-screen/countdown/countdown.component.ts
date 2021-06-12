@@ -1,6 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { ASENKA_BACK_DATETIME } from '../../../constants';
-import { DateRange } from '../../../interfaces/date-range';
+import { Component, Input, OnInit, OnChanges, OnDestroy } from '@angular/core';
 
 interface DateTime {
   days: number;
@@ -14,7 +12,7 @@ interface DateTime {
   templateUrl: './countdown.component.html',
   styleUrls: ['./countdown.component.scss']
 })
-export class CountdownComponent implements OnInit, OnDestroy {
+export class CountdownComponent implements OnInit, OnChanges, OnDestroy {
 
   @Input() endDate!: Date;
 
@@ -38,6 +36,12 @@ export class CountdownComponent implements OnInit, OnDestroy {
 
     const countdownUpdateInterval = 1000;
     this.countdownProcess = setInterval(this.recountTimeValues.bind(this), countdownUpdateInterval);
+  }
+
+  public ngOnChanges(): void {
+    this.ngOnDestroy();
+    this.ngOnInit();
+    this.recountTimeValues();
   }
 
   public ngOnDestroy(): void {

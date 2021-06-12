@@ -13,6 +13,16 @@
   border-radius: 50%;
 }
 
+.switch-button {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: white;
+  background-color: #E50914;
+  width: 100px;
+  height: 40px;
+}
+
 @media (min-width: 1050px) {
   .container {
     background: linear-gradient(

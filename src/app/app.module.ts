@@ -11,6 +11,7 @@ import { CountdownComponent } from './home-screen/countdown/countdown.component'
 import { FlexModule } from '@angular/flex-layout';
 import { ProgressLineComponent } from './home-screen/progress-line/progress-line.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -19,14 +20,15 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     CountdownComponent,
     ProgressLineComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    BrowserAnimationsModule,
-    FlexModule,
-    MatProgressBarModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+        BrowserAnimationsModule,
+        FlexModule,
+        MatProgressBarModule,
+        MatButtonModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
