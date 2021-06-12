@@ -1,10 +1,10 @@
 <div class="container" fxLayout="column" fxLayoutAlign="center center">
   <h1 class="title">{{ countdownOptions.title }}</h1>
   <app-countdown [endDate]="countdownOptions.dateRange.endDate"></app-countdown>
-  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-    <img src="assets/images/Klagenfurt.png" class="image">
+  <div class="progress-bar-container" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <!--<img src="assets/images/Klagenfurt.png" class="image">-->
     <app-progress-line [dateRange]="countdownOptions.dateRange"></app-progress-line>
-    <img src="assets/images/alex.jpg" class="image alex-img">
+    <!--<img src="assets/images/alex.jpg" class="image alex-img">-->
   </div>
   <button class="switch-button" mat-flat-button (click)="switchCountdownOptions()">Switch</button>
 </div>
