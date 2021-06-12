@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
-import { ASENKA_BACK_DATETIME, ASENKA_START_DATETIME } from '../../../constants';
+import { Component, OnInit, OnDestroy, ViewEncapsulation, Input } from '@angular/core';
+import { DateRange } from '../../../interfaces/date-range';
 
 @Component({
   selector: 'app-progress-line',
@@ -9,17 +9,19 @@ import { ASENKA_BACK_DATETIME, ASENKA_START_DATETIME } from '../../../constants'
 })
 export class ProgressLineComponent implements OnInit, OnDestroy {
 
+  @Input() dateRange!: DateRange;
+  @Input() labelUpdateInterval = 30;
+
   public progressValue!: number;
 
-  private readonly fullTime: number = ASENKA_BACK_DATETIME.getTime() - ASENKA_START_DATETIME.getTime();
   private readonly maxBarValue = 100;
+
+  private fullTime!: number;
   private countdownProcess: any;
 
-  private timeLeft = (): number => Date.now() - ASENKA_START_DATETIME.getTime();
-
   public ngOnInit() {
-    const labelUpdateInterval = 30;
-    this.countdownProcess = setInterval(this.updateProgressValue.bind(this), labelUpdateInterval);
+    this.fullTime = this.dateRange.endDate.getTime() - this.dateRange.startDate.getTime();
+    this.countdownProcess = setInterval(this.updateProgressValue.bind(this), this.labelUpdateInterval);
   }
 
   public ngOnDestroy(): void {
@@ -27,6 +29,7 @@ export class ProgressLineComponent implements OnInit, OnDestroy {
   }
 
   private updateProgressValue(): void {
-    this.progressValue = (this.timeLeft() / this.fullTime) * this.maxBarValue;
+    const timeLeft = Date.now() - this.dateRange.startDate.getTime();
+    this.progressValue = (timeLeft / this.fullTime) * this.maxBarValue;
   }
 }

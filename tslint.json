@@ -33,7 +33,7 @@
       true,
       140
     ],
-    "member-access": true,
+    // "member-access": true,
     "member-ordering": [
       true,
       {

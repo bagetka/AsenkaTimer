@@ -1,5 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ASENKA_BACK_DATETIME } from '../../../constants';
+import { DateRange } from '../../../interfaces/date-range';
 
 interface DateTime {
   days: number;
@@ -14,6 +15,8 @@ interface DateTime {
   styleUrls: ['./countdown.component.scss']
 })
 export class CountdownComponent implements OnInit, OnDestroy {
+
+  @Input() endDate!: Date;
 
   public datetimeLeft!: DateTime;
 
@@ -42,7 +45,7 @@ export class CountdownComponent implements OnInit, OnDestroy {
   }
 
   private recountTimeValues(): void {
-    let delta: number = ASENKA_BACK_DATETIME.getTime() - Date.now();
+    let delta: number = this.endDate.getTime() - Date.now();
 
     // Full days left
     const days = Math.floor(delta / this.millisecondNumber.days);
@@ -54,12 +57,12 @@ export class CountdownComponent implements OnInit, OnDestroy {
     this.datetimeLeft.hours = hours;
     delta -= hours * this.millisecondNumber.hours;
 
-    // Full hours left
+    // Full minutes left
     const minutes = Math.floor(delta / this.millisecondNumber.minutes);
     this.datetimeLeft.minutes = minutes;
     delta -= minutes * this.millisecondNumber.minutes;
 
-    // Full hours left
+    // Full seconds left
     this.datetimeLeft.seconds = Math.floor(delta / this.millisecondNumber.seconds);
   }
 }
