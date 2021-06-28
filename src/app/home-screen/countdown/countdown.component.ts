@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, OnChanges, OnDestroy } from '@angular/core';
+import {TimeHelper} from '../../Helpers/TimeHelper';
 
 interface DateTime {
   days: number;
@@ -49,7 +50,13 @@ export class CountdownComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   private recountTimeValues(): void {
-    let delta: number = this.endDate.getTime() - Date.now();
+    let delta: number = this.endDate.getTime() - TimeHelper.getMinskTime();
+    const timezone = new Date().getTimezoneOffset();
+    console.log(timezone);
+
+    if (delta < 0) {
+      return;
+    }
 
     // Full days left
     const days = Math.floor(delta / this.millisecondNumber.days);

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, OnChanges, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { DateRange } from '../../../interfaces/date-range';
+import {TimeHelper} from '../../Helpers/TimeHelper';
 
 @Component({
   selector: 'app-progress-line',
@@ -34,7 +35,8 @@ export class ProgressLineComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   private updateProgressValue(): void {
-    const timeLeft = Date.now() - this.dateRange.startDate.getTime();
-    this.progressValue = (timeLeft / this.fullTime) * this.maxBarValue;
+    const timeLeft = TimeHelper.getMinskTime() - this.dateRange.startDate.getTime();
+    const progressValue = (timeLeft / this.fullTime) * this.maxBarValue;
+    this.progressValue = progressValue > this.maxBarValue ? this.maxBarValue : progressValue;
   }
 }
