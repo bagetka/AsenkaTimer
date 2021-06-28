@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1623501112282,
-  "index": "/AsenkaTimer/index.html",
+  "timestamp": 1624892366458,
+  "index": "/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,13 +11,13 @@
         "ignoreVary": true
       },
       "urls": [
-        "/AsenkaTimer/assets/icons/icon.png",
-        "/AsenkaTimer/index.html",
-        "/AsenkaTimer/main.8a9b8148ccbc47b921a4.js",
-        "/AsenkaTimer/manifest.webmanifest",
-        "/AsenkaTimer/polyfills.94daefd414b8355106ab.js",
-        "/AsenkaTimer/runtime.7b63b9fd40098a2e8207.js",
-        "/AsenkaTimer/styles.927cf32a5eb187a3d452.css"
+        "/assets/icons/icon.png",
+        "/index.html",
+        "/main.557c224497a031031a66.js",
+        "/manifest.webmanifest",
+        "/polyfills.94daefd414b8355106ab.js",
+        "/runtime.7b63b9fd40098a2e8207.js",
+        "/styles.927cf32a5eb187a3d452.css"
       ],
       "patterns": []
     },
@@ -29,29 +29,29 @@
         "ignoreVary": true
       },
       "urls": [
-        "/AsenkaTimer/assets/images/Klagenfurt.png",
-        "/AsenkaTimer/assets/images/alex.jpg",
-        "/AsenkaTimer/assets/images/asya.jpg",
-        "/AsenkaTimer/assets/images/background.jpg",
-        "/AsenkaTimer/background.7861d20b614613d3c15a.jpg"
+        "/assets/images/Klagenfurt.png",
+        "/assets/images/alex.jpg",
+        "/assets/images/asya.jpg",
+        "/assets/images/background.jpg",
+        "/background.7861d20b614613d3c15a.jpg"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "/AsenkaTimer/assets/icons/icon.png": "e8eb171a48ecbb04cb0a08ff175b543d0a537cef",
-    "/AsenkaTimer/assets/images/Klagenfurt.png": "29561c9abaeea65de1ab54963fa7f86567dfa289",
-    "/AsenkaTimer/assets/images/alex.jpg": "f4cef959c1c2be458ff86dca2e3d20188a126dc7",
-    "/AsenkaTimer/assets/images/asya.jpg": "aeb4c932afcd12ce367f4065382be4a3204df385",
-    "/AsenkaTimer/assets/images/background.jpg": "8646cba9f9b08f135a26eebc2d26d53ddf9509ba",
-    "/AsenkaTimer/background.7861d20b614613d3c15a.jpg": "8646cba9f9b08f135a26eebc2d26d53ddf9509ba",
-    "/AsenkaTimer/index.html": "290958faa490cb20e10cd17bf843699e102a117f",
-    "/AsenkaTimer/main.8a9b8148ccbc47b921a4.js": "3fde1b310b52a77337232222b70336bd41642aaa",
-    "/AsenkaTimer/manifest.webmanifest": "149277bb1c8e488423434088ad9738bbe57fd691",
-    "/AsenkaTimer/polyfills.94daefd414b8355106ab.js": "cfe7b0b53e96bff9ba384b4d497c08475a617d62",
-    "/AsenkaTimer/runtime.7b63b9fd40098a2e8207.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/AsenkaTimer/styles.927cf32a5eb187a3d452.css": "d2c6246881e5be42e4107626316d20a248a3ad20"
+    "/assets/icons/icon.png": "e8eb171a48ecbb04cb0a08ff175b543d0a537cef",
+    "/assets/images/Klagenfurt.png": "29561c9abaeea65de1ab54963fa7f86567dfa289",
+    "/assets/images/alex.jpg": "f4cef959c1c2be458ff86dca2e3d20188a126dc7",
+    "/assets/images/asya.jpg": "aeb4c932afcd12ce367f4065382be4a3204df385",
+    "/assets/images/background.jpg": "8646cba9f9b08f135a26eebc2d26d53ddf9509ba",
+    "/background.7861d20b614613d3c15a.jpg": "8646cba9f9b08f135a26eebc2d26d53ddf9509ba",
+    "/index.html": "ed8e32d7a5329c31417642218fd75a2f128b5a9d",
+    "/main.557c224497a031031a66.js": "6e0e8f0d54024ff868623ec559cb9567440944e0",
+    "/manifest.webmanifest": "147231020688c655d8b11ff80f5218c5da3f02f9",
+    "/polyfills.94daefd414b8355106ab.js": "cfe7b0b53e96bff9ba384b4d497c08475a617d62",
+    "/runtime.7b63b9fd40098a2e8207.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/styles.927cf32a5eb187a3d452.css": "d2c6246881e5be42e4107626316d20a248a3ad20"
   },
   "navigationUrls": [
     {
